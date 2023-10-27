@@ -1,2 +1,2 @@
 # Ak_code_dsa
-in this all the code is available for me to learn dsa and also with question are included 
+this repo will give me 20lpa job in the mnc, and i am going to do contract with me that in next one year i will be different person  
