@@ -1,4 +1,4 @@
-package getters_setters;
+package OOPS;
 //  we cant create a object of abstract class
 
 // we dont implement a abstract class or methods / function

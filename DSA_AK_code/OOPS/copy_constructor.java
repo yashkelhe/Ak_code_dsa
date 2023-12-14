@@ -1,4 +1,4 @@
-package getters_setters;
+package OOPS;
 // in this constructor there  are two types like when you make changes in the s1 and that also reflect on the s2 also then its shallow copy means its change by reference 
 
 //  deep copy means when you make changes int the s1 and that doesn't reflect on the s2 then its called deep copy 

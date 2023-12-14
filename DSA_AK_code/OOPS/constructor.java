@@ -1,4 +1,4 @@
-package getters_setters;
+package OOPS;
 
 //  constructor have same name as class name
 //  constructor dont have any return type ( not even void also )

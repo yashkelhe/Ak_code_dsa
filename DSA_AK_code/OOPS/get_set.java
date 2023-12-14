@@ -1,4 +1,4 @@
-package getters_setters;
+package OOPS;
 
 public class get_set {
     public static void main(String[] args) {
