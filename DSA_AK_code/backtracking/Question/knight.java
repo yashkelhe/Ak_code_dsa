@@ -19,16 +19,18 @@ public class knight {
     }
 
     public static boolean solveKT() {
-        int sol[][] = new int[8][8];
-
+        int sol[][] = new int[N][N];
+        // intialize the array with the -1
         for (int x = 0; x < N; x++)
             for (int y = 0; y < N; y++)
                 sol[x][y] = -1;
 
+        // auxiliary array
         int xMove[] = { 2, 1, -1, -2, -2, -1, 1, 2 };
         int yMove[] = { 1, 2, 2, 1, -1, -2, -2, -1 };
 
-        sol[0][0] = 0; // Starting position
+        sol[0][0] = 0;
+        // Starting position
 
         if (!solveKTUtil(0, 0, 1, sol, xMove, yMove)) {
             System.out.println("Solution does not exist");
@@ -45,6 +47,8 @@ public class knight {
             return true;
 
         for (k = 0; k < 8; k++) {
+
+            // x and y use for to add the current index to the next index
             next_x = x + xMove[k];
             next_y = y + yMove[k];
             if (isSafe(next_x, next_y, sol)) {

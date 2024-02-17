@@ -1,7 +1,7 @@
 package arrray_2d_array;
 
 public class search_in_sorted_array {
-
+    // here we use the two pointer approch
     public static boolean staircase(int matrix[][], int key) {
         System.out.println("kye  is : " + key);
         int row = 0;

@@ -15,7 +15,7 @@ public class q1 {
             return "weired";
         } else {
             if (2 <= n && n >= 5) {
-z
+
                 return "Not Weird";
             } else if (6 <= n && n <= 20) {
                 return "weird";
