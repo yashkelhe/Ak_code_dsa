@@ -2,6 +2,7 @@ package Stack;
 
 import java.util.*;
 
+// and then time complexity will be O(n)
 public class valied_parentheses {
     public static Boolean isValied(String str) {
         // create a stack

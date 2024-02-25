@@ -13,7 +13,15 @@ public class Next_greater_Element {
 
         for (int i = arr.length - 1; i >= 0; i--) {
             // while to remove less then value of the index and we are going to store our
-            // index inthe stack
+            // index in the stack
+
+            // This part of the code is a while loop that checks if the stack `s` is not
+            // empty and if
+            // the element at the top of the stack (retrieved using `s.peek()`) is less than
+            // or equal to
+            // the current element `arr[i]`. If this condition is true, it pops the element
+            // from the
+            // stack.
             while (!s.empty() && arr[s.peek()] <= arr[i]) {
                 s.pop();
             }
