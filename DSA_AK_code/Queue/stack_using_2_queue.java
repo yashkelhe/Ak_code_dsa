@@ -1,7 +1,9 @@
 import java.util.*;
 
+// here we are making the queue using the two stack
 public class stack_using_2_queue {
-    static class stack {
+    static class Stack {
+        // create tow queue
         static Queue<Integer> q1 = new LinkedList<>();
         static Queue<Integer> q2 = new LinkedList<>();
 
@@ -18,6 +20,8 @@ public class stack_using_2_queue {
             }
         }
 
+        // TC(1) for the pop function
+
         public static int pop() {
             if (isEmpty()) {
                 System.out.println("stack is empty");
@@ -25,17 +29,27 @@ public class stack_using_2_queue {
             }
 
             int top = -1;
-            // Move elements from q1 to q2 until only one element is left in q1
-            while (q1.size() > 1) {
-                q2.add(q1.remove());
-            }
-            // Retrieve the top element
-            top = q1.remove();
 
-            // Swap queues q1 and q2
-            Queue<Integer> temp = q1;
-            q1 = q2;
-            q2 = temp;
+            // case 1
+            if (!q1.isEmpty()) {
+
+                while (!q1.isEmpty()) {
+                    top = q1.remove();
+
+                    if (q1.isEmpty()) {
+                        break;
+                    }
+                    q2.add(top);
+                }
+            } else { // case2
+                while (!q2.isEmpty()) {
+                    top = q2.remove();
+                    if (q2.isEmpty()) {
+                        break;
+                    }
+                    q1.add(top);
+                }
+            }
 
             return top;
         }
@@ -48,22 +62,29 @@ public class stack_using_2_queue {
 
             int top = -1;
             // Move elements from q1 to q2 until only one element is left in q1
-            while (!q1.isEmpty()) {
-                top = q1.remove();
-                q2.add(top);
-            }
 
-            // Swap queues q1 and q2
-            Queue<Integer> temp = q1;
-            q1 = q2;
-            q2 = temp;
+            // case 1
+            if (!q1.isEmpty()) {
+
+                while (!q1.isEmpty()) {
+                    top = q1.remove();
+
+                    q2.add(top);
+                }
+            } else { // case2
+                while (!q2.isEmpty()) {
+                    top = q2.remove();
+
+                    q1.add(top);
+                }
+            }
 
             return top;
         }
     }
 
     public static void main(String[] args) {
-        stack q = new stack();
+        Stack q = new Stack();
         q.push(1);
         q.push(2);
         q.push(3);
@@ -75,15 +96,3 @@ public class stack_using_2_queue {
         }
     }
 }
-// The stack is implemented using two queues, q1 and q2, where q1 serves as the
-// primary queue for storing elements. In the push(int data) method, when adding
-// an element, it checks which queue is not empty and adds the element to that
-// queue. For popping an element in the pop() method, elements are moved from q1
-// to q2 until there's only one element left in q1, which represents the top
-// element of the stack. This top element is removed and returned, and the
-// queues are swapped to maintain the correct order. Similarly, in the peek()
-// method, elements are moved from q1 to q2 until q1 becomes empty, allowing
-// retrieval of the top element without removing it. Finally, the queues are
-// swapped back to their original order. This approach ensures that the stack
-// operations (push, pop, peek) have the correct behavior while utilizing two
-// queues.
