@@ -31,7 +31,6 @@ public class Create_BST {
             // Traverse to the right subtree and insert the value there
             root.right = insert(root.right, value);
         }
-
         // Return the modified root of the subtree
         return root;
     }
