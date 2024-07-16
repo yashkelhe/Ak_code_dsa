@@ -31,7 +31,7 @@ public class Duplicate_parentheses {
     }
 
     public static void main(String[] args) {
-        String str = "(a+b)";
-        System.out.println(isDuplicate(str));
+        String str = "(a+b)}";
+        System.out.println(""+ str +" equestion has "+ isDuplicate(str)+" value");
     }
 }
