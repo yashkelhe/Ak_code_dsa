@@ -9,7 +9,7 @@ public class matrices {
     public static void search(int matrix[][], int key) {
         int largest = Integer.MIN_VALUE;
         int smallest = Integer.MAX_VALUE;
-
+        //  basically a binary search 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
 

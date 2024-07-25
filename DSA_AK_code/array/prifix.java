@@ -23,16 +23,24 @@ public class prifix {
             int start = i;
             for (int j = i; j < numbers.length; j++) {
                 int end = j;
-                sum = start == 0 ? prifix[end] : prifix[end] - prifix[start - 1];
+                // if i= 0 
+                // 0,1,2,3,4 ... 
+                // all values also 
+                // sum = start == 0 ? prifix[end] : prifix[end] - prifix[start - 1];
+                if(start == 0){
+                    sum = prifix[end];
+                }else{
+                    sum =  prifix[end] - prifix[start - 1];
+                }
 
                 if (max < sum) {
                     max = sum;
                 }
-                System.out.println();
+             
             }
-            System.out.println();
+     
         }
-        System.out.println("the maximum value of pair is :" + max);
+        System.out.println("the maximum value of single  pair is :" + max);
     }
 
     public static void main(String[] args) {

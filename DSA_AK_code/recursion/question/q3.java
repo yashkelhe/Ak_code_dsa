@@ -5,12 +5,11 @@ public class q3 {
         // Base case: if the string is empty, return 0
         if (inputString.length() == 0) {
             return 0;
-        } else {
+        } 
             // Recursive case: increment the length by 1 and call the function with the
             // string minus the first character
-            return 1 + findLengthRecursive(inputString.substring(1));
-        }
-
+        
+        return 1 + findLengthRecursive(inputString.substring(1));
     }
 
     public static void main(String[] args) {

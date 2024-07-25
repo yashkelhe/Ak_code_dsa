@@ -18,9 +18,15 @@ public class first_occurance {
         if (i == arr.length) {
             return -1;
         }
+        System.out.println("first iteration " + i);
+
         int isFound = lastOccurance(key, arr, i + 1);
-        System.out.println("this is isFound" + isFound);
+        
+        System.out.println("this is isFound ........... : " + isFound);
+        System.out.println("second  iteration " + i);
+
         if (isFound == -1 && arr[i] == key) {
+            System.out.println("the answer is : "+i);
             return i;
         }
 
@@ -30,8 +36,8 @@ public class first_occurance {
 
     public static void main(String[] args) {
         int arr[] = { 9, 3, 4, 5, 8, 11, 6, 5, 5, 5, 8 };
-        System.out.println(firstOccurance(5, arr, 0));
-        System.out.println(lastOccurance(5, arr, 0));
+        // System.out.println(firstOccurance(5, arr, 0));
+        System.out.println("the final answer is : "+lastOccurance(5, arr, 0));
     }
 }
 

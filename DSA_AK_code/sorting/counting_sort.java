@@ -11,10 +11,12 @@ public class counting_sort {
 
         int count[] = new int[largest + 1];
         for (int i = 0; i < array.length; i++) {
+            // the element come form the arr of that value on that index of the count increment the value by 1
             count[array[i]]++;
         }
         // sorting
         int j = 0;
+        // now here count length will be 26 
         for (int i = 0; i < count.length; i++) {
             while (count[i] > 0) {
                 array[j] = i;

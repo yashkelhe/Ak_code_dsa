@@ -1,5 +1,7 @@
 package array;
 
+
+// it will take an O(n^2)
 public class pairs_array {
     public static void pairs(int num[]) {
         int tp = 0;

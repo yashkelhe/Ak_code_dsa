@@ -11,7 +11,7 @@ public class subarray {
             for (int j = i; j < numbers.length; j++) {
                 int end = j;
                 sum = 0;
-                for (int k = start; k < end; k++) {
+                for (int k = start; k <= end; k++) {
                     sum += numbers[k];
                     System.out.print(numbers[k] + " ");
 
