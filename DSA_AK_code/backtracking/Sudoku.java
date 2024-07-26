@@ -21,7 +21,7 @@ public class Sudoku {
 
         int sr = (row / 3) * 3;
         int sc = (col / 3) * 3;
-
+        System.out.println("sr : "+sr+" sc : "+sc);
         for (int i = sr; i < sr + 3; i++) {
             for (int j = sc; j < sc + 3; j++) {
                 if (sudoku[i][j] == digit) {
@@ -48,6 +48,7 @@ public class Sudoku {
         }
 
         // to check that the number is already present in the index or not
+
         if (sudoku[row][col] != 0) {
             return findSudoku(sudoku, newRow, newCol);
         }

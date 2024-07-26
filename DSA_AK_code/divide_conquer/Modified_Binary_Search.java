@@ -13,6 +13,7 @@ public class Modified_Binary_Search {
         }
         // mid on l1 line
         // right part of the l1 line
+        System.out.println("starting : "+si +" ending is : "+ ei +" mid : "+ mid );
         if (arr[si] <= arr[mid]) {
             if (arr[si] <= tar && tar <= arr[mid]) {
                 return search(arr, tar, si, mid - 1);

@@ -16,6 +16,7 @@ public class Quick_Sort {
             return;
         }
         int pivot = partition(arr, si, ei);
+        System.out.println("pivote is :  "+pivot);
         quickSort(arr, si, pivot - 1);
         quickSort(arr, pivot + 1, ei);
 
@@ -23,6 +24,7 @@ public class Quick_Sort {
 
     public static int partition(int arr[], int si, int ei) {
         // last element as pivot
+        System.out.println(" stating : "+ si+" ending : "+ei);
         int pivot = arr[ei];
         int i = si - 1;
         for (int j = si; j < ei; j++) {
@@ -37,11 +39,12 @@ public class Quick_Sort {
         int temp = arr[ei];
         arr[ei] = arr[i];
         arr[i] = temp;
+
         return i;
     }
 
     public static void main(String[] args) {
-        int arr[] = { 6, 3, 9, 8, 2, 5, -5 };
+        int arr[] = { 6, 3, 9, 8, 2, 5 };
         quickSort(arr, 0, arr.length - 1);
         printArray(arr);
     }

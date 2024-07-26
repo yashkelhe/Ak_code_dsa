@@ -35,3 +35,11 @@ public class Remove_Duplicate {
                                                                                // lowercase letters
     }
 }
+
+
+// the flow is 
+/*
+ *  
+ * 
+ * 
+ */

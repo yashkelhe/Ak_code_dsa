@@ -15,6 +15,7 @@ public class permutation {
             // "abcde" => "ab"+ "de" = "abde"
             // substring(0, i-1)
             String NewStr = str.substring(0, i) + str.substring(i + 1);
+            System.out.println("the new string : "+NewStr);
             permut(NewStr, ans + curr);
         }
     }

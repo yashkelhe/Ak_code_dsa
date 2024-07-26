@@ -17,6 +17,8 @@ public class Find_SubSets {
 
         // yes
         // ans.append(str.charAt(i));
+
+        System.out.println(".........first iteration : "+ans);
         findSubSet(str, ans + str.charAt(i), i + 1);
         // take example that when it reaches to the base case then it will
         // print thea abc and when it comes to the privouse state then it
@@ -26,6 +28,7 @@ public class Find_SubSets {
         // why the string value always changes at each position
 
         // no
+        System.out.println("the string is a : "+ ans );
         // ans.deleteCharAt(ans.length() - 1);
         findSubSet(str, ans, i + 1);
 

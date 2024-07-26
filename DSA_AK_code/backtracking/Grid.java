@@ -11,33 +11,38 @@ public class Grid {
             return 0;
         }
         // recurstion
-        // down
+        // down row 
         int w1 = totalWays(i + 1, j, n, m);
 
-        // right
+        // right columns 
         int w2 = totalWays(i, j + 1, n, m);
+        System.out.println("w1 : "+w1+" w2 : "+w2);
         return w1 + w2;
     }
-
+    
     public static int optimizeWay(int n, int m) {
         // base
         if (n == 0 || m == 0) {
             return 1;
         }
-
+        
         // recurstion
+   
         int w1 = n * optimizeWay(n - 1, m);
         int w2 = m * optimizeWay(n, m - 1);
+        System.out.println("w1 : "+w1+" w2 : "+w2);
         int sum = w1 + w2;
         return sum / w1 * w2;
 
     }
 
     public static void main(String[] args) {
+        // row and colums  size
         int n = 3, m = 3;
 
+
         // here Time complexity will be O(2^n+m) which is exponential ,to bad
-        System.out.println(totalWays(0, 0, n, m));
+        // System.out.println(totalWays(0, 0, n, m));
 
         // here Time complexity will be O(n)
         System.out.println(optimizeWay(n, m));
