@@ -6,7 +6,7 @@ package ArrayList.question;
 // Output:
 //     [10, 8]
 // Explanation:
-//     - 10 is a lonely number since it appears exactly once, and 9 and 11 do not appear in nums.
+//     - 10 is a lonely number since it appears exactly once, and 9 and 11 do not appear in nums.n
 //     - 8 is a lonely number since it appears exactly once, and 7 and 9 do not appear in nums.
 //     - 5 is not a lonely number since 6 appears in nums and vice versa.
 //     Hence, the lonely numbers in nums are [10, 8]. Note that [8, 10] may also be returned.
@@ -35,6 +35,7 @@ public class lonely_Number_ArrayList {
         }
 
         // if list has only one element is remaing in the list
+        // The edge case if (nums.size() == 1) handles the scenario where the list has only one element. Here’s why this check is necessary and how it works:
         if (nums.size() == 1) {
             list.add(nums.get(0));
         }
@@ -56,6 +57,7 @@ public class lonely_Number_ArrayList {
         list.add(5);
         list.add(3);
         list.add(8);
+        list.add(9);
         list.add(10);
         System.out.println(findLonelyNumber(list));
     }

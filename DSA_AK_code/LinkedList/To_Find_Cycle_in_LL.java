@@ -2,10 +2,8 @@ package LinkedList;
 
 public class To_Find_Cycle_in_LL {
 
-    // this is node class which will used to create new Node
-
-    // and this also called as the Floyd's algorithm
-    // and O(N) will be the time compelxity
+    // Node class used to create a new Node
+    // This implementation uses Floyd's Cycle-Finding Algorithm (Tortoise and Hare)
     public static class Node {
         int data;
         Node next;
@@ -16,64 +14,101 @@ public class To_Find_Cycle_in_LL {
         }
     }
 
-    public static Node head;
-    public static Node tail;
+    private Node head;
 
-    public Boolean isCycle() {
+    // Method to detect cycle in the linked list
+    public boolean isCycle() {
         Node slow = head;
-        Node Fast = head;
-        while (Fast != null && Fast.next != null) {
-            slow = slow.next;// +1
-            Fast = Fast.next.next;// +2
-            if (slow == Fast) {
-                return true; // cycle exists
-            }
+        Node fast = head;
+        
+        // Traverse the list with two pointers
+        while (fast != null && fast.next != null) {
+            slow = slow.next; // Move slow pointer by 1
+            fast = fast.next.next; // Move fast pointer by 2
 
+            // If the slow and fast pointers meet, a cycle exists
+            if (slow == fast) {
+                return true;
+            }
         }
-        return false;// cycle doesn't exists
+        // If we reach the end of the list, no cycle exists
+        return false;
     }
 
+    // Method to remove cycle from the linked list
     public void removeLoop() {
-
-        // Detect cycle
+        // Detect cycle using two pointers
         Node slow = head;
-        Node Fast = head;
+        Node fast = head;
+        boolean cycle = false;
 
-        Boolean cycle = false;
-        while (Fast != null && Fast.next != null) {
-            slow = slow.next;
-            Fast = Fast.next.next;
-            if (slow == Fast) {
+        // Detect if a cycle exists
+        while (fast != null && fast.next != null) {
+            slow = slow.next; // Move slow pointer by 1
+            fast = fast.next.next; // Move fast pointer by 2
+
+            // If the slow and fast pointers meet, a cycle exists
+            if (slow == fast) {
                 cycle = true;
                 break;
             }
         }
-        if (cycle == false) {
+
+        // If no cycle is found, return
+        if (!cycle) {
             return;
         }
-        // find metting point
+
+        // Find the starting point of the cycle
         slow = head;
         Node prev = null;
-        while (slow != Fast) {
-            prev = Fast;
-            slow = slow.next;
-            Fast = Fast.next;
-        }
-        // remove cycle -> last.next = null
-        prev.next = null;
 
+        // . When slow and fast meet again, they will be at the start of the cycle.
+        while (slow != fast) {   
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        // Remove the cycle by setting the previous node's next to null
+        prev.next = null;
+    }
+
+    // Method to add nodes to the list for testing
+    public void addNode(int data) {
+        Node newNode = new Node(data);
+
+        // If the list is empty, set the new node as the head
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        // Otherwise, find the last node and add the new node
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = newNode;
     }
 
     public static void main(String[] args) {
-        To_Find_Cycle_in_LL ll = new To_Find_Cycle_in_LL(); // create a object
-        head = new Node(1);
-        Node temp = new Node(2);
-        head.next = temp;
-        head.next.next = new Node(3);
-        head.next.next = head;
-        // 1 - 2 - 3- 2
+        To_Find_Cycle_in_LL ll = new To_Find_Cycle_in_LL();
+        ll.addNode(1);
+        ll.addNode(2);
+        ll.addNode(3);
 
-        // System.out.println(ll.isCycle());
+        // Creating a cycle manually for testing
+        // This creates a cycle: 1 -> 2 -> 3 -> 2 ...
+        ll.head.next.next.next = ll.head.next;
+
+        // Check if a cycle is detected
+        System.out.println("Cycle detected: " + ll.isCycle()); // Should print true
+
+        // Remove the cycle if it exists
         ll.removeLoop();
+
+        // Check again if a cycle is detected after removal
+        System.out.println("Cycle detected after removal: " + ll.isCycle()); // Should print false
     }
 }

@@ -30,7 +30,7 @@ public class swaping_Nodes_LL {
             curry = curry.next;
         }
 
-        if (currx == null && currx == null) {
+        if (curry == null || currx == null) {
             return;
         }
         // for the x

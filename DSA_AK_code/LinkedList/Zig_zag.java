@@ -30,11 +30,22 @@ public class Zig_zag {
         tail.next = temp;
         tail = temp;
     }
+        public void printLL(Node head) {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + "->");
+            temp = temp.next;
+        }
+        System.out.println("null");
+    }
+
 
     public void zigZag() {
         // to find the Mid
         Node slow = head;
         Node fast = head;
+
+        // it will give me mid  
         while (fast != null && fast.next != null) {
             slow = slow.next;// +1
             fast = fast.next.next;// +2
@@ -51,6 +62,7 @@ public class Zig_zag {
         Node next;
         while (curr != null) {
             next = curr.next;
+            // this will make the linkedlist reverse 
             curr.next = prev;
             prev = curr;
             curr = next;
@@ -71,20 +83,15 @@ public class Zig_zag {
             left = nextL;
             right = nextR;
         }
-
+        System.out.println("this is right");
+        printLL(right);
+        System.out.println("this is left");
+        printLL(left);
     }
 
-    public void printLL() {
-        Node temp = head;
-        while (temp != null) {
-            System.out.print(temp.data + "->");
-            temp = temp.next;
-        }
-        System.out.println("null");
-    }
 
     public static void main(String[] args) {
-
+        // here we have to make this in the zig zag  order ? right 
         Zig_zag ll = new Zig_zag();
         ll.addLast(1);
         ll.addLast(2);
@@ -93,9 +100,9 @@ public class Zig_zag {
         ll.addLast(5);
         ll.addLast(6);
 
-        ll.printLL();
+        ll.printLL(head);
         ll.zigZag();
-        ll.printLL();
+        ll.printLL(head);
 
     }
 }

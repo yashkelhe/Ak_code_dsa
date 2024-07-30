@@ -23,7 +23,6 @@ public class Stock_Span_Problem {
             // which is last condition for to find the span
             if (s.isEmpty()) {
                 span[i] = i + 1;
-
             }
             // if stack is not empty then find the previous value nd then minuse from the
             // index we will get the span

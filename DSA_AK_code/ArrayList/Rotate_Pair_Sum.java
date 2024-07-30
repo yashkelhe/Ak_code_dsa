@@ -17,8 +17,9 @@ public class Rotate_Pair_Sum {
                 break;
             }
         }
-        int lp = bp + 1;
-        int rp = bp;
+
+        int lp = bp + 1; //2
+        int rp = bp;//1
 
         while (lp != rp) {
             if (list.get(lp) + list.get(rp) == target) {
@@ -27,6 +28,7 @@ public class Rotate_Pair_Sum {
             } else if (list.get(lp) + list.get(rp) < target) {
                 lp = (lp + 1) % n;
             } else {
+                    // here we are taking the raminder 
                 rp = (n + rp - 1) % n;
             }
         }
