@@ -28,6 +28,7 @@ public class Topological_sort_using_BFS {
         graph[5].add(new Edge(5, 2));
     }
 
+    // calculate the in degree of the all
     public static void calculateIndeg(ArrayList<Edge>[] graph, int[] indeg) {
         for (int i = 0; i < graph.length; i++) {
             int v = i;
@@ -51,6 +52,7 @@ public class Topological_sort_using_BFS {
         }
 
         // bfs
+        // what bfs syss that the first see all the neighboure then go next
         while (!q.isEmpty()) {
             int curr = q.remove();
             System.out.println("curr : " + curr); // topological sort
