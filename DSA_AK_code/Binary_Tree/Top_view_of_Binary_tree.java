@@ -44,7 +44,8 @@ public class Top_view_of_Binary_tree {
                     q.add(null);
                 }
             } else {
-                if (!map.containsKey(curr.horiDis)) { // when the key is not in the map then add the value in the map
+                // when the key is not in the map then add the value in the map
+                if (!map.containsKey(curr.horiDis)) {
                     map.put(curr.horiDis, curr.node);
                 }
                 // here info object in the curr
@@ -62,6 +63,7 @@ public class Top_view_of_Binary_tree {
             }
 
         }
+        System.out.println("min : " + min + " max : " + max);
         for (int i = min; i <= max; i++) {
             System.out.print(map.get(i).data + " ");
         }
@@ -72,11 +74,10 @@ public class Top_view_of_Binary_tree {
         Node root = new Node(1);
         root.left = new Node(2);
         root.right = new Node(3);
-        root.left.left = new Node(4);
+        root.left.right = new Node(4);
         // root.left.left.left = new Node(2);
-        root.left.right = new Node(5);
-        root.right.left = new Node(6);
-        root.right.right = new Node(7);
+        root.left.right.right = new Node(5);
+        root.left.right.right.right = new Node(6);
 
         topView(root);
 

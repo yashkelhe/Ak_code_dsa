@@ -1,6 +1,6 @@
-package DSA_AK_code.Binary_Tree.question;
+package question;
 
-TC is O(n);SC is O(n);
+// TC is O(n);SC is O(n);
 public class Delete_all_leaf_Node_has_x_value {
     static class Node {
         int data;

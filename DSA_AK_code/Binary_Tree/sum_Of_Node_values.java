@@ -21,6 +21,7 @@ public class sum_Of_Node_values {
         int ls = sum(root.left);
         int rs = sum(root.right);
         int SumOfValue = ls + rs + root.data;
+
         return SumOfValue;
 
     }

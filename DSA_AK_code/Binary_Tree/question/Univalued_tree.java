@@ -21,7 +21,8 @@ public class Univalued_tree {
         if (root == null) {
             return true;
         }
-
+        // we have to check that all the number are the same in the tree or not if not
+        // then return false
         if (root.right != null && root.right.data != root.data) {
             return false;
         }

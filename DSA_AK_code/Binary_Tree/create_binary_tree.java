@@ -1,9 +1,5 @@
 package Binary_Tree;
 
-import java.io.OutputStream;
-
-import Binary_Tree.create_binary_tree.BinaryTree;
-
 // and the time complexity of the code is O(n);
 public class create_binary_tree {
     static class Node {

@@ -46,7 +46,8 @@ public class Subtree_of_another_tree {
                 return true;
             }
         }
-
+        // it means that ur standing in road and there are two path u have choose one
+        // for that if the data is match then we will go to that direction
         return isSubtree(root.left, subtree) || isSubtree(root.right, subtree);
     }
 

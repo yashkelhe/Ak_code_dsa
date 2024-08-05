@@ -1,4 +1,4 @@
-package DSA_AK_code.Binary_Tree.question;
+package question;
 
 public class Invert_Binary_tree {
 
