@@ -38,7 +38,7 @@ public class Word_Break {
 
 
 
-        public static boolean search(String key) {
+    public static boolean search(String key) {
         if (root == null) {
             return false;
         }
