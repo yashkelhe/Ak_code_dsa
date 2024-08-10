@@ -1,4 +1,4 @@
-package DSA_AK_code.Binary_search_tree;
+package Binary_search_tree;
 
 import java.util.*;
 
@@ -73,7 +73,6 @@ public class Root_to_leaf_path {
         System.out.println();
     }
 
-    
     public static void main(String[] args) {
         int values[] = { 8, 5, 3, 1, 4, 6, 10, 11, 14 };
         Node root = null;

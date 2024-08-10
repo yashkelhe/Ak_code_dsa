@@ -1,4 +1,4 @@
-package DSA_AK_code.Binary_search_tree;
+package Binary_search_tree;
 
 public class Create_BST {
 

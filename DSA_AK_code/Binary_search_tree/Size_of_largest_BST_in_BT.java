@@ -32,7 +32,7 @@ public class Size_of_largest_BST_in_BT {
         if (root == null) {
             return new Info(true, 0, Integer.MIN_VALUE, Integer.MAX_VALUE);
         }
-
+        // it will go up to the nul and create a new info and backtrack
         Info leftInfo = largestBST(root.left);
         Info rightInfo = largestBST(root.right);
 

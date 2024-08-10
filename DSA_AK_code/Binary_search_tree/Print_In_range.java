@@ -1,4 +1,4 @@
-package DSA_AK_code.Binary_search_tree;
+package Binary_search_tree;
 
 // TC O(h) h= is height
 public class Print_In_range {
