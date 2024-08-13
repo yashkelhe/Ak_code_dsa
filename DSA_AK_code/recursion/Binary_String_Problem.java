@@ -14,9 +14,9 @@ public class Binary_String_Problem {
         // printString(n - 1, 0, sb.append("0"));
         // }
 
-        System.out.println( "the is :  "+sb  +"  n   : "+n);
-        printString(n - 1, 0, sb + "0");
-        System.out.println( "the is :  "+sb  +" and n is  : "+n);
+        // System.out.println("the is : " + sb + " n : " + n);
+        printString(n - 1, 0, (sb + "0"));
+        // System.out.println("the is : " + sb + " and n is : " + n);
         if (lastPlcae == 0) {
             printString(n - 1, 1, sb + "1");
         }
@@ -26,7 +26,6 @@ public class Binary_String_Problem {
         printString(3, 0, "");
     }
 }
-
 
 /*
  * 3

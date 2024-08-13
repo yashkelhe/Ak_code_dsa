@@ -7,7 +7,7 @@ public class Convert_BST_to_Balanced_BST {
 
     static class Node {
         int data;
-        Node left, right;   
+        Node left, right;
 
         public Node(int data) {
             this.data = data;
