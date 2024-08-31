@@ -13,6 +13,7 @@ public class fibonacci {
         }
 
         // Compute the value and store it in the array
+        // 4 = 3 + 2 ;
         f[n] = fib(n - 1, f) + fib(n - 2, f);
         return f[n];
     }

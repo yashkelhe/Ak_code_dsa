@@ -12,6 +12,7 @@ public class Create_BST {
         }
     }
 
+    // to inset the new Node
     public static Node insert(Node root, int value) {
         // If the root is null, create a new node with the given value and return it
         if (root == null) {
@@ -35,6 +36,7 @@ public class Create_BST {
         return root;
     }
 
+    // inorder gives the sorted element
     public static void inOrder(Node root) {
         if (root == null) {
             return;

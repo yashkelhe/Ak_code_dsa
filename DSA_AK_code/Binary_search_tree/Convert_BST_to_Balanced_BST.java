@@ -57,6 +57,7 @@ public class Convert_BST_to_Balanced_BST {
             return null;
         }
         ArrayList<Integer> inorder = new ArrayList<>();
+        // inorder will give u the sorted element
         getInorder(root, inorder);
 
         // and then create a balacne BST
