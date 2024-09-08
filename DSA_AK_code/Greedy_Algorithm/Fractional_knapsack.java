@@ -15,12 +15,13 @@ public class Fractional_knapsack {
         double ratio[][] = new double[value.length][2];
         // 0th => col is for index , 1st => ratio
 
+        // because we want value more then weight so and we sort on the value
         for (int i = 0; i < value.length; i++) {
             ratio[i][0] = i;
             ratio[i][1] = value[i] / (double) weight[i];
         }
 
-        // ascending order
+        // ascending order sort on the value
         Arrays.sort(ratio, Comparator.comparingDouble(o -> o[1]));
         // but we want in the discending order
 
@@ -33,6 +34,9 @@ public class Fractional_knapsack {
                 capacity -= weight[index];
             } else {
                 // include the fractional items
+                // like if the weight is more and we want to put the remaining weight using
+                // fraction then take the (value/ weight) and multiplyy with remaining weight
+                // so we will get the as much value as the weight we have
                 finalValue += (ratio[i][1] * capacity);
                 capacity = 0;
                 break;
