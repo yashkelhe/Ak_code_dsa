@@ -22,6 +22,7 @@ public class create_binary_tree {
             if (-1 == nodes[index]) {
                 return null;
             }
+            // and this is a preorder traversal to create
             Node newNode = new Node(nodes[index]);
             newNode.left = buildNode(nodes);// left sub tree
             newNode.right = buildNode(nodes);// right sub tree
@@ -63,6 +64,7 @@ public class create_binary_tree {
     }
 
     public static void main(String[] args) {
+        // this is level order traversal is given to us
         int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
         BinaryTree tree = new BinaryTree();
         Node root = tree.buildNode(nodes);
