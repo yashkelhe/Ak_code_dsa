@@ -12,6 +12,7 @@ public class Duplicate_parentheses {
             if (ch == ')') {
                 int count = 0;
                 while (s.peek() != '(') {
+                    System.out.println(s.peek());
                     s.pop();
                     count++;
                 }
@@ -19,6 +20,7 @@ public class Duplicate_parentheses {
                     // duplicate
                     return true;
                 } else {
+                    System.out.println(s.peek());
                     // to pop the pair open bracket '(';
                     s.pop();
                 }
@@ -32,6 +34,6 @@ public class Duplicate_parentheses {
 
     public static void main(String[] args) {
         String str = "(a+b)}";
-        System.out.println(""+ str +" equestion has "+ isDuplicate(str)+" value");
+        System.out.println("" + str + " equestion has " + isDuplicate(str) + " value");
     }
 }
