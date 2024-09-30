@@ -25,10 +25,8 @@ public class Knapsack_01 {
             int ans2 = knapsackFindMaxValue(value, weight, w, n - 1);
             return Math.max(ans1, ans2);
         } else {
-
             return knapsackFindMaxValue(value, weight, w, n - 1);
         }
-
     }
 
     // the time complexty is O(n* w)
@@ -48,6 +46,7 @@ public class Knapsack_01 {
             DP[n][w] = Math.max(ans1, ans2);
             return DP[n][w];
         } else {
+            // exclude condition
             DP[n][w] = usingMemoizationKnapSack(value, weight, w, n - 1, DP);
             return DP[n][w];
         }
@@ -110,9 +109,9 @@ public class Knapsack_01 {
         int value[] = { 15, 14, 10, 45, 30 };
         int wt[] = { 2, 5, 1, 3, 4 };
         int w = 7;
-        System.out.println("using tabulation : " + TabulationKnapsack(value, wt, w));
         System.out.println("using Recursion : " + knapsackFindMaxValue(value, wt, w, value.length));
 
+        System.out.println("using tabulation : " + TabulationKnapsack(value, wt, w));
         int DP[][] = new int[value.length + 1][w + 1];
         for (int[] row : DP) {
 

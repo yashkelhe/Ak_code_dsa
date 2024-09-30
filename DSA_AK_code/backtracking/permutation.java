@@ -15,7 +15,9 @@ public class permutation {
             // "abcde" => "ab"+ "de" = "abde"
             // substring(0, i-1)
             String NewStr = str.substring(0, i) + str.substring(i + 1);
-            System.out.println("the new string : "+NewStr);
+            System.out.println("the new string : " + NewStr);
+            // we have added the curr into the ans and then again we are going to find the
+            // permutation of the next value
             permut(NewStr, ans + curr);
         }
     }
@@ -60,7 +62,7 @@ public class permutation {
 // permut("", "bac")
 // Base case reached, prints "bac"
 // Second iteration of the for loop with i = 1:
-        
+
 // permut("a", "bc")
 
 // Third iteration of the for loop with i = 0:

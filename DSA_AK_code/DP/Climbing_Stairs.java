@@ -22,6 +22,7 @@ public class Climbing_Stairs {
         if (ways[n] != -1) {
             return ways[n];
         }
+        // means addition of the 3 and 4
         ways[n] = UsingMemoizationCountWays(n - 1, ways) + UsingMemoizationCountWays(n - 2, ways);
         return ways[n];
     }
