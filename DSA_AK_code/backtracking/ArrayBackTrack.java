@@ -8,7 +8,7 @@ public class ArrayBackTrack {
             printArray(arr);
             return;
         }
-        // recursion;
+        // recursion; 
 
         arr[i] = val;
         array(arr, i + 1, val + 1); // here we call the function

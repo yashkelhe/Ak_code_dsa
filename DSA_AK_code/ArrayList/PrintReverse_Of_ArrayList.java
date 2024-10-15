@@ -15,6 +15,7 @@ public class PrintReverse_Of_ArrayList {
         // time complexity is O(n)
         for (int i = 0; i < length / 2; i++) {
             int temp = list.get(i);
+            // l -1 -i to get the end index
             list.set(i, list.get(length - 1 - i));
             list.set(length - 1 - i, temp);
         }

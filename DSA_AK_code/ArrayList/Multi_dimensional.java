@@ -20,6 +20,7 @@ public class Multi_dimensional {
         list.add(list2);
         list.add(list3);
         System.out.println(list);
+        System.out.println(list.get(0).get(1));
 
         for (int i = 0; i < list.size(); i++) {
             ArrayList<Integer> temp = list.get(i);

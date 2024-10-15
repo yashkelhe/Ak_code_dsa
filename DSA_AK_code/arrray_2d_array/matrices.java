@@ -9,7 +9,7 @@ public class matrices {
     public static void search(int matrix[][], int key) {
         int largest = Integer.MIN_VALUE;
         int smallest = Integer.MAX_VALUE;
-        //  basically a binary search 
+        // basically a binary search
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
 
@@ -40,8 +40,8 @@ public class matrices {
         int n = matrix.length; // this gives row length
         int m = matrix[0].length; // and this gives single row length
         Scanner sc = new Scanner(System.in);
-        for (int i = 0; i < n; i++) { // length is 0,1 ,2,
-            for (int j = 0; j < m; j++) { // 0,1,2
+        for (int i = 0; i < n; i++) { // length is 0,1 ,2, row
+            for (int j = 0; j < m; j++) { // 0,1,2 coloum
                 matrix[i][j] = sc.nextInt();
             }
         }

@@ -11,21 +11,18 @@ public class question1 {
         Set<Integer> distinct = new HashSet<Integer>();
         for (int elements : nums) {
             if (distinct.contains(elements)) {
+                System.out.println("True");
                 return true;
             }
             distinct.add(elements);
         }
+        System.out.println("False");
         return false;
     }
 
     public static void main(String[] args) {
-        int arr[] = { 1, 2, 3 };
+        int arr[] = { 1, 2, 3, 2 };
         boolean isdistinct = isDistinct(arr);
-        if (isdistinct == false) {
-            System.out.println("every elements are distinct");
-        } else {
-            System.out.println("the array is not distinct");
-        }
 
     }
 }

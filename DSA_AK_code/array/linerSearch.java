@@ -18,7 +18,6 @@ public class linerSearch {
         int index = linersearch(number, key);
         if (index == -1) {
             System.out.println("not found");
-
         } else {
             System.out.println("the number at index of " + index);
         }

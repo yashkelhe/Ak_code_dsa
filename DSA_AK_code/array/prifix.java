@@ -23,22 +23,20 @@ public class prifix {
             int start = i;
             for (int j = i; j < numbers.length; j++) {
                 int end = j;
-                // if i= 0 
-                // 0,1,2,3,4 ... 
-                // all values also 
+                // if i= 0
+                // 0,1,2,3,4 ...
+                // all values also
                 // sum = start == 0 ? prifix[end] : prifix[end] - prifix[start - 1];
-                if(start == 0){
+                if (start == 0) {
                     sum = prifix[end];
-                }else{
-                    sum =  prifix[end] - prifix[start - 1];
+                } else {
+                    sum = prifix[end] - prifix[start - 1];
                 }
-
                 if (max < sum) {
                     max = sum;
                 }
-             
             }
-     
+
         }
         System.out.println("the maximum value of single  pair is :" + max);
     }
@@ -46,6 +44,6 @@ public class prifix {
     public static void main(String[] args) {
         int numbe[] = { 3, -3, 4, 5, -7 };
         subaray(numbe);
-
+        // 3 , 0 , 4 , 9, 2
     }
 }

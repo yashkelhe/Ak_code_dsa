@@ -36,8 +36,8 @@ public class Add_elements {
 
         // to print the size of the arraylist
         System.out.println("length of the list :" + list.size());
-        for (int i = 0; i < list.size(); i++) {
-            System.out.print(list.get(i) + " ");
+        for (int i : list) {
+            System.out.print(i + " ");
         }
     }
 }

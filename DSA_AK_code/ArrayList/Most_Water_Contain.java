@@ -9,6 +9,7 @@ public class Most_Water_Contain {
         for (int i = 0; i < list.size(); i++) {
             for (int j = 0; j < list.size(); j++) {
                 int height = Math.min(list.get(i), list.get(j));
+
                 int width = j - i;
                 int water = height * width;
                 mostWater = Math.max(mostWater, water);
