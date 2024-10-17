@@ -8,6 +8,8 @@ public class Coin_Change {
 
         // then assign a meaning to the initialze
         for (int i = 0; i < n + 1; i++) {
+            // why one because if sum is 0 then not coins will take means null and null also
+            // count as one way
             dp[i][0] = 1;
         }
         // in the java the array is initialize with 0

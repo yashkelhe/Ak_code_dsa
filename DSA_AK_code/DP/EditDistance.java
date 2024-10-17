@@ -31,8 +31,12 @@ public class EditDistance {
         for (int i = 1; i < n + 1; i++) {
             for (int j = 1; j < m + 1; j++) {
                 if (st1.charAt(i - 1) == st2.charAt(j - 1)) {
+
+                    // why here because we always see the string from the back think about the
+                    // smallest problem and then think about the large problem
                     dp[i][j] = dp[i - 1][j - 1];
                 } else {
+                    // do the operation
                     int add = dp[i][j - 1] + 1;
                     int remove = dp[i - 1][j] + 1;
                     int replace = dp[i - 1][j - 1] + 1;
@@ -48,7 +52,7 @@ public class EditDistance {
     public static void main(String[] args) {
         String str1 = "intention";
         String str2 = "execution";
-
+        // variation is asked in the accenture coding round
         System.out.println(findHowManyOperationRequired(str1, str2));
     }
 }

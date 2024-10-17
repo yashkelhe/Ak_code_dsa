@@ -68,6 +68,7 @@ public class Knapsack_01 {
         }
 
         // i means number of items
+
         // and j means the max weight
         // (2, 3)
         // there will 0 1 2 items and weight is 3
@@ -77,6 +78,7 @@ public class Knapsack_01 {
                 int ww = weight[i - 1];// ith item weight
                 // valid
                 if (ww <= j) {
+
                     int includeProfit = v + dp[i - 1][j - ww];
                     int excludeProfit = dp[i - 1][j]; // when the weigjt is greater then j
                     dp[i][j] = Math.max(includeProfit, excludeProfit);

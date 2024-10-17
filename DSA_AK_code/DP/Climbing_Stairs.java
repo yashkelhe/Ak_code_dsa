@@ -30,6 +30,7 @@ public class Climbing_Stairs {
     // time Complexty is O(n)
     public static int TabulationCountWays(int n) {
         int dp[] = new int[n + 1];
+        // initialize
         dp[0] = 1;
 
         for (int i = 1; i <= n; i++) {
