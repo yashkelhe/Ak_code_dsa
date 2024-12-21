@@ -44,6 +44,10 @@ public class prifix {
     public static void main(String[] args) {
         int numbe[] = { 3, -3, 4, 5, -7 };
         subaray(numbe);
+
+        // prefix sum array
         // 3 , 0 , 4 , 9, 2
+        // and the max value of the single pair is 9 = 4 + 5
+
     }
 }

@@ -14,6 +14,7 @@ public class share_market {
         // condition true porfit will be 3 - 1 = 2 but the max is 4
         // condition true porfit will be 6- 1 = 5 now the max is 5
         // condition true porfit will be 4 - 1 = 3 but the max is 5
+
         for (int i = 0; i < price.length; i++) {
             if (buypricing < price[i]) {
                 int profit = price[i] - buypricing;
@@ -32,5 +33,6 @@ public class share_market {
         System.out.print("the maximum profit is :");
         System.out.println(shareMarket(price));
 
+        // buying price always less then the selling price to make the profit
     }
 }

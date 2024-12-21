@@ -77,3 +77,7 @@ public class create_binary_tree {
         // System.out.println(root.data);
     }
 }
+
+// pre rt l r
+// in l rt r
+// post l r rt

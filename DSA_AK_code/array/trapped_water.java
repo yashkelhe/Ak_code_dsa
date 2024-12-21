@@ -25,6 +25,7 @@ public class trapped_water {
         // the leftMax Will be {4 4 4 6 6 6 6 }
         // the RightMax Will be {6 6 6 6 5 5 5 }
         // { 4, 2, 0, 6, 3, 2, 5 };
+
         int rightMax[] = new int[n];
         rightMax[n - 1] = height[n - 1];
         // O(n)
@@ -47,7 +48,8 @@ public class trapped_water {
     }
 
     public static void main(String[] args) {
-
+        // width = 1
+        // area = height * width
         int height[] = { 4, 2, 0, 6, 3, 2, 5 };
         // O(n)+O(n)+O(n) =(3n)=(n)
         System.out.println(trappedWater(height));
