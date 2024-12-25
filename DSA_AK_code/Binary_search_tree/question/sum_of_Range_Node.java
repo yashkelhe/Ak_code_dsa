@@ -18,8 +18,12 @@ public class sum_of_Range_Node {
         if (root == null) {
             return;
         }
+
+        // the left side node value is less then the root and right side is greater then
+        // the root
         if (root.data >= l && root.data <= r) {
             counter += root.data;
+            System.out.print(root.data);
         }
         if (root.data > l) {
             preOrder(root.left, l, r);

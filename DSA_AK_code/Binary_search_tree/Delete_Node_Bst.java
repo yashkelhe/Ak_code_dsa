@@ -13,6 +13,7 @@ public class Delete_Node_Bst {
     }
 
     public static Node findInOrderSuccessor(Node root) {
+        // to find the right tree smallest which is successor
         while (root.left != null) {
             root = root.left;
         }
@@ -20,6 +21,7 @@ public class Delete_Node_Bst {
     }
 
     public static Node delete(Node root, int val) {
+        // if small then left else right
         if (root.data > val) {
             root.left = delete(root.left, val);
         } else if (root.data < val) {
@@ -36,6 +38,7 @@ public class Delete_Node_Bst {
 
             // case 2
             // when the only left node is null or right node is null
+            // only one side is preset
             if (root.left == null) {
                 return root.right;
             } else if (root.right == null) {
@@ -105,3 +108,46 @@ public class Delete_Node_Bst {
     }
 
 }
+
+// //////////////////////////// deleteFunction///////////////////
+/*
+ * Function Explanation:
+ * Base Case:
+ * 
+ * If the root is null, there's nothing to delete, so return null.
+ * Traverse the Tree:
+ * 
+ * If the value to delete (val) is less than root.data, the node must be in the
+ * left subtree. Recurse into the left subtree: root.left = delete(root.left,
+ * val).
+ * If the value is greater than root.data, recurse into the right subtree:
+ * root.right = delete(root.right, val).
+ * Node Found:
+ * 
+ * If root.data == val, we need to delete this node. Three cases are handled
+ * here:
+ * Case 1: Node is a Leaf
+ * If both root.left and root.right are null, simply return null to remove this
+ * node.
+ * Case 2: Node has One Child
+ * If the node has only one child:
+ * If root.left == null, return root.right. This "replaces" the node with its
+ * right child.
+ * If root.right == null, return root.left. This "replaces" the node with its
+ * left child.
+ * Case 3: Node has Two Children
+ * Find the In-Order Successor:
+ * The in-order successor is the smallest node in the right subtree (leftmost
+ * node in the right subtree).
+ * Call findInOrderSuccessor(root.right) to get this node.
+ * Replace Current Node's Value:
+ * Set root.data to the value of the in-order successor (is.data).
+ * Delete the In-Order Successor:
+ * Recursively delete the in-order successor from the right subtree: root.right
+ * = delete(root.right, is.data).
+ * Return the Updated Root:
+ * 
+ * After handling the deletion, return the updated root node.
+ * 
+ * 
+ */

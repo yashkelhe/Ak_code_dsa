@@ -56,15 +56,15 @@ public class Merge_Two_BST {
         ArrayList<Integer> finalList = new ArrayList<>();
         while (i < rt1.size() && j < rt2.size()) {
             if (rt1.get(i) <= rt2.get(j)) {
-
                 finalList.add(rt1.get(i));
                 i++;
             } else {
-
                 finalList.add(rt2.get(j));
                 j++;
             }
         }
+
+        // for security
         while (j < rt2.size()) {
             finalList.add(rt2.get(j));
             j++;
@@ -93,3 +93,11 @@ public class Merge_Two_BST {
         preOrder(Merge);
     }
 }
+
+/*
+ * first take the inorder of the both tree
+ * which we will get the two sorted list now we just have to marge those two
+ * list
+ * by creating the new list
+ * 
+ */
