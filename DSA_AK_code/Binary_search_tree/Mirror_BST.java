@@ -12,7 +12,6 @@ public class Mirror_BST {
         }
     }
 
-    
     // inorder
     public static void inorder(Node root) {
         if (root == null) {
@@ -23,6 +22,7 @@ public class Mirror_BST {
         System.out.print(root.data + " ");
         inorder(root.right);
     }
+
     public static Node mirror(Node root) {
         if (root == null) {
             return null;
@@ -44,6 +44,7 @@ public class Mirror_BST {
         root.left.right = new Node(6);
         root.right.right = new Node(11);
 
+        // find the inOrder which give the
         inorder(root);
         mirror(root);
         System.out.println();

@@ -29,6 +29,7 @@ public class Merge_Two_BST {
             return null;
         }
         int mid = (st + end) / 2;
+        // preOrder to create new Tree
         Node root = new Node(arr.get(mid));
         root.left = balancedTree(arr, st, mid - 1);
         root.right = balancedTree(arr, mid + 1, end);
@@ -99,5 +100,6 @@ public class Merge_Two_BST {
  * which we will get the two sorted list now we just have to marge those two
  * list
  * by creating the new list
+ * then create the tree using the PreOrder
  * 
  */

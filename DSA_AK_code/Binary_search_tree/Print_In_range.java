@@ -66,10 +66,23 @@ public class Print_In_range {
         inOrder(root.right);
     }
 
+    public static void ByUsingInOrder(Node root, int key1, int key2) {
+        if (root == null) {
+            return;
+        }
+        // l.rt.r
+        ByUsingInOrder(root.left, key1, key2);
+        // System.out.print(root.data + " ");
+        if (key1 <= root.data && key2 >= root.data) {
+            System.out.print(root.data + " ");
+        }
+        ByUsingInOrder(root.right, key1, key2);
+    }
+
     public static void main(String[] args) {
         int values[] = { 5, 2, 1, 3, 4, 7, 9, 10, 8, 6 };
         Node root = null;
-        int key = 11;
+
         for (int i = 0; i < values.length; i++) {
             root = insert(root, values[i]);
         }
@@ -77,5 +90,8 @@ public class Print_In_range {
         System.out.println();
 
         printInRange(root, 5, 12);
+        System.out.println();
+        System.out.println("by using the InOrder");
+        ByUsingInOrder(root, 5, 12);
     }
 }
