@@ -12,7 +12,7 @@ public class KADANES {
          * if the numbers is negative then compare with the priviouse negative number
          * and then print smallest one
          */
-        // this loop take the O(n)
+        // this loop take the O(n) to get the most negative value
         for (int i = 0; i < numbers.length; i++) {
             // here if
             if (numbers[i] < 0 && numbers[i] < ifnve) {
@@ -20,8 +20,8 @@ public class KADANES {
             }
         }
         System.out.println("the smallest value is   :" + ifnve);
-        // this loop take the O(n)
 
+        // this loop take the O(n)
         for (int i = 0; i < numbers.length; i++) {
 
             cs = cs + numbers[i];

@@ -15,31 +15,31 @@ public class clear_ith_bit {
         return n & bitmask;
     }
 
-    public static void main(String[] args) {   
+    public static void main(String[] args) {
         System.out.println(clearIthBit(2, 3));
     }
 }
-
-
 
 class Solution {
 
     public int[] twoSum(int[] nums, int target) {
 
-        for(int i = 0 ; i < nums.length-1  ; i ++ ){
-            for(int j = i+ 1 ; j< nums.length  ;  j++){
-                if ((nums[i] + nums [j]) == target ){    
-                    return new int[] {i , j} ;
+        for (int i = 0; i < nums.length - 1; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if ((nums[i] + nums[j]) == target) {
+                    return new int[] { i, j };
                 }
-            }  
+            }
         }
-    }
-} 
+        return nums;
 
+    }
+}
 
 abstract class animal {
-    void eat(){
+    void eat() {
         System.out.println("print");
     }
-    abstract  void cat();
+
+    abstract void cat();
 }

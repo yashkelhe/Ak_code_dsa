@@ -28,8 +28,15 @@ public class prifix {
                 // all values also
                 // sum = start == 0 ? prifix[end] : prifix[end] - prifix[start - 1];
                 if (start == 0) {
+
+                    // and here the range is from the 0 to n
                     sum = prifix[end];
                 } else {
+
+                    // Subtracting prifix[0] removes this extra part, leaving the sum of elements
+                    // from start = 1 to end = 2
+                    // to get the prefix sum we are just removing the previouse part to get the
+                    // current rage of the part
                     sum = prifix[end] - prifix[start - 1];
                 }
                 if (max < sum) {

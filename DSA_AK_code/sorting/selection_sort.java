@@ -10,15 +10,16 @@ public class selection_sort {
             int minPos = i;
             for (int j = i + 1; j < array.length; j++) {
                 if (array[minPos] > array[j]) {
+                    // take the smallest one from the array from the array
                     minPos = j;
                 }
             }
-            // here the minPos  - 3 
-            System.out.println(" minPos "+minPos  + " i "+ i );
+            // here the minPos - 3
+            System.out.println(" minPos " + minPos + " i " + i);
+
+            // and replace the smallest with the i which is more in then starting position
             int temp = array[minPos];
-            // here i = 0 
-            array[minPos] = array[i] ;
-            
+            array[minPos] = array[i];
             array[i] = temp;
             // then array will be [1, 4, 3,5,2 ]
         }

@@ -4,19 +4,20 @@ package sorting;
 // count sort mostly used for the positive numbers
 public class counting_sort {
     public static void counting(int array[]) {
-        int largest = Integer.MIN_VALUE;
+        int largest = Integer.MIN_VALUE; // negative value
         for (int i = 0; i < array.length; i++) {
             largest = Math.max(largest, array[i]);
         }
 
         int count[] = new int[largest + 1];
         for (int i = 0; i < array.length; i++) {
-            // the element come form the arr of that value on that index of the count increment the value by 1
+
+            // it will store the frequency of element
             count[array[i]]++;
         }
         // sorting
         int j = 0;
-        // now here count length will be 26 
+        // now here count length will be 26
         for (int i = 0; i < count.length; i++) {
             while (count[i] > 0) {
                 array[j] = i;

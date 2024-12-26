@@ -21,7 +21,7 @@ public class subarray {
                     max = sum;
 
                 }
-                System.out.println("sum is ; " + max);
+                // System.out.println("sum is ; " + max);
                 System.out.println();
             }
             System.out.println();
