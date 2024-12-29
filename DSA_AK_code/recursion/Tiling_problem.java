@@ -8,7 +8,7 @@ public class Tiling_problem {
     public static int tillingProblm(int n) {
         // base case
         if (n == 0 || n == 1) {
-            return 1;
+            return 1
         }
 
         // // kam
@@ -26,3 +26,5 @@ public class Tiling_problem {
         System.out.println("total Number of wayes to add tilies are :" + tillingProblm(4));
     }
 }
+
+// two choice weather hori(n-2) or verti (n-1)

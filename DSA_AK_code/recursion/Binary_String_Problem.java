@@ -8,7 +8,7 @@ public class Binary_String_Problem {
             return;
         }
         // if (lastPlcae == 0) {
-        // printString(n - 1, 0, sb.append("0"));
+        // printString(n - 1, 0, sb.append(" 0"));
         // printString(n - 1, 1, sb.append("1"));
         // } else {
         // printString(n - 1, 0, sb.append("0"));

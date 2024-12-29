@@ -3,7 +3,7 @@ package recursion;
 // classical problem on  the recursion 
 public class Friends_Pairing_Problem {
     public static int findTotalWayes(int n) {
-        if (n == 1 || n == 2) {
+        if (n == 1 || n == 2 || n == 0) {
             return n;
         }
         // // when person wants to be signle

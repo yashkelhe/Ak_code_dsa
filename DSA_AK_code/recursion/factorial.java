@@ -8,13 +8,13 @@ public class factorial {
         }
         // work
         // recursion function
-        int fact2 = factorial(n - 1);
-        int fact = n * fact2;
+
+        int fact = n * factorial(n - 1);
         return fact;
     }
 
     public static void main(String[] args) {
-        int n = 3;
+        int n = 12;
         System.out.println(factorial(n));
     }
 }

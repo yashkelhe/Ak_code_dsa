@@ -19,7 +19,7 @@ public class Remove_Duplicate {
         // where we want to store the unDuplicate value
         if (map[charIndex] != null && map[charIndex]) {
             // Character is a duplicate
-
+            // just increment the index
             removeDuplicateString(str, index + 1, newStr, map);
         } else {
             // Non-duplicate character, mark it as encountered
@@ -36,8 +36,7 @@ public class Remove_Duplicate {
     }
 }
 
-
-// the flow is 
+// the flow is
 /*
  *  
  * 

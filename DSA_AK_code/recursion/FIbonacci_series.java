@@ -8,10 +8,7 @@ public class FIbonacci_series {
             return n;
         }
 
-        int f1 = fibo(n - 1);
-        int f2 = fibo(n - 2);
-
-        int fib = f1 + f2;
+        int fib = fibo(n - 2) + fibo(n - 1);
 
         return fib;
     }
