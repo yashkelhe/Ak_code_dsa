@@ -29,8 +29,8 @@ public class DeleteNthFromEnd {
 
         if (n == size) {
             head = head.next; // remove first element when you see that the linked list size is 5 and i want
-                              // to delete the 5 element from the back it means that we have to delete the
-                              // first node so that will be our head
+            // to delete the 5 element from the back it means that we have to delete the
+            // first node so that will be our head
             return;
         }
 

@@ -22,7 +22,7 @@ public class Nqueen {
                 board[row][i] = 'Q';
                 nQueen(board, row + 1);// to call the next row
                 board[row][i] = 'x';// backtraking step and remove the queent and try to set the queen in differnt
-                                    // places
+                // places
             }
         }
     }
@@ -37,6 +37,7 @@ public class Nqueen {
         System.out.println("row is : " + row + " col is  : " + col);
         for (int i = row - 1; i >= 0; i--) {
             if (board[i][col] == 'Q') {
+                System.out.println("--------fales---------");
                 return false;
             }
         }
@@ -47,6 +48,7 @@ public class Nqueen {
         // position is not safe.
         for (int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--) {
             if (board[i][j] == 'Q') {
+                System.out.println("--------fales---------");
                 return false;
             }
         }
@@ -58,9 +60,11 @@ public class Nqueen {
         // why plus one because we have check for the next column
         for (int i = row - 1, j = col + 1; i >= 0 && j < board.length; i--, j++) {
             if (board[i][j] == 'Q') {
+                System.out.println("--------fales---------");
                 return false;
             }
         }
+        System.out.println("--------True---------");
         return true;
     }
 

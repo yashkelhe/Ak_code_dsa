@@ -27,6 +27,7 @@ public class LinkedList_ {
         }
 
         // step2 to newNod next = head
+        // at first add
         newNode.next = head;
         // step 3 head = newNode
         head = newNode;

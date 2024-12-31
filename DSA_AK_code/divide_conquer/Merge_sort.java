@@ -7,9 +7,9 @@ public class Merge_sort {
         if (si >= ei) {
             return;
         }
-        // first find the middle and then  
-        // sort the both the sides 
-        // then combine both sides 
+        // first find the middle and then
+        // sort the both the sides
+        // then combine both sides
         int mid = si + (ei - si) / 2;
         System.out.println("si :" + si + " ei : " + ei + " mid : " + mid);
         mergeSort(array, si, mid);
@@ -21,8 +21,8 @@ public class Merge_sort {
 
     public static void merge(int arr[], int si, int mid, int ei) {
         int temp[] = new int[ei - si + 1];
-        int i = si;  // Start of left subarray
-        int j = mid + 1;  // Start of right subarray
+        int i = si; // Start of left subarray
+        int j = mid + 1; // Start of right subarray
         int k = 0;
 
         while (i <= mid && j <= ei) {
@@ -60,12 +60,11 @@ public class Merge_sort {
     }
 
     public static void main(String[] args) {
-        int arr[] = {6, 3, 9, 5, 2, 8};
+        int arr[] = { 6, 3, 9, 5, 2, 8 };
         mergeSort(arr, 0, arr.length - 1);
         printArray(arr);
     }
 }
-
 
 // The merge sort algorithm employs a divide-and-conquer approach to efficiently
 // sort an array. It begins by recursively dividing the array into halves until
