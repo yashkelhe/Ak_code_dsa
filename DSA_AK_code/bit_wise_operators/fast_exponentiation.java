@@ -6,6 +6,7 @@ public class fast_exponentiation {
     public static int exponentiation(int a, int n) {
 
         int ans = 1;
+        // up to n
         while (n > 0) {
             if ((n & 1) != 0) { // cheack LSb
                 ans = ans * a;

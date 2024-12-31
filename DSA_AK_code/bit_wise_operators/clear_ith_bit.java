@@ -11,8 +11,8 @@ package bit_wise_operators;
 // Bit positions:  3  2  1  0
 public class clear_ith_bit {
     public static int clearIthBit(int n, int i) {
-        int bitmask = ~(1 << i);
-        return n & bitmask;
+        int bitmask = ~(1 << i);// ~(0001 << 0011) => ~(0100) => 1011
+        return n & bitmask; // 0010 & 1011 => 0110
     }
 
     public static void main(String[] args) {

@@ -16,8 +16,8 @@ package bit_wise_operators;
 public class clear_last_ith_bits {
 
     public static int clear_last_ith(int n, int i) {
-        int bitmask = (~0) << i;
-        return n & bitmask;
+        int bitmask = (~0) << i;// 1 <<2 => 1100
+        return n & bitmask; // 1111 & 1100=1100
     }
 
     public static void main(String[] args) {

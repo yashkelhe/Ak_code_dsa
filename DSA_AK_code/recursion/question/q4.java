@@ -25,8 +25,14 @@ public class q4 {
         if (n <= 0) {
             return 0;
         }
+
+        // here the first incrment the posibility is from starting to n-1 or i+1 to n
+        // minus e overlap between the two previous cases
         int res = countSubstrs(str, i + 1, j, n - 1) + countSubstrs(str, i, j - 1, n - 1)
                 - countSubstrs(str, i + 1, j - 1, n - 2);
+
+        // Possibilities are Discovered: Only during backtracking when the function
+        // evaluates str[i] == str[j]
         if (str.charAt(i) == str.charAt(j)) {
             res++;
         }
@@ -40,3 +46,43 @@ public class q4 {
     }
 
 }
+
+// using the DPs
+/*
+ * 
+ * public class SubstringCount {
+ * public static int countSubstrs(String str) {
+ * int n = str.length();
+ * int[][] dp = new int[n][n];
+ * int count = 0;
+ * 
+ * // Single character substrings
+ * for (int i = 0; i < n; i++) {
+ * dp[i][i] = 1;
+ * count++;
+ * }
+ * 
+ * // Substrings of length > 1
+ * for (int len = 2; len <= n; len++) {
+ * for (int i = 0; i <= n - len; i++) {
+ * int j = i + len - 1;
+ * 
+ * // Check if the first and last characters are the same
+ * if (str.charAt(i) == str.charAt(j)) {
+ * dp[i][j] = dp[i + 1][j] + dp[i][j - 1] - dp[i + 1][j - 1] + 1;
+ * count++;
+ * } else {
+ * dp[i][j] = dp[i + 1][j] + dp[i][j - 1] - dp[i + 1][j - 1];
+ * }
+ * }
+ * }
+ * return count;
+ * }
+ * 
+ * public static void main(String[] args) {
+ * String str = "abcab";
+ * System.out.println(countSubstrs(str)); // Output: 7
+ * }
+ * }
+ * 
+ */

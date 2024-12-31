@@ -9,6 +9,8 @@ public class count_set_bit {
     public static int countSetBits(int n) {
         int count = 0;
         while (n > 0) {
+
+            // find one
             if ((n & 1) != 0) {
                 count++;
             }
