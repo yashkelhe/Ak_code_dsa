@@ -19,8 +19,8 @@ public class Rotate_Pair_Sum {
             }
         }
 
-        int lp = bp + 1; // 2
         int rp = bp;// 1
+        int lp = bp + 1; // 2
 
         while (lp != rp) {
             if (list.get(lp) + list.get(rp) == target) {
@@ -30,6 +30,8 @@ public class Rotate_Pair_Sum {
                 lp = (lp + 1) % n;
             } else {
                 // here we are taking the raminder
+                // n + rp - 1 becomes 6 + 0 - 1 = 5, which corresponds to the last index.
+                // Applying modulo: (5 % 6) = 5.
                 rp = (n + rp - 1) % n;
             }
         }
