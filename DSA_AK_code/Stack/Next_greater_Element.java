@@ -7,12 +7,12 @@ public class Next_greater_Element {
 
     public static void main(String[] args) {
         // int arr[] = { 6, 8, 0, 1, 3 };
-        int arr[] = { 5, 4, 10, 2, 1, 0, 9 };
+        int arr[] = { 5, 4, 10, 2, 1, 0, 9, 11 };
         Stack<Integer> s = new Stack<>();
         int nextGreater[] = new int[arr.length];
 
         for (int i = arr.length - 1; i >= 0; i--) {
-            // while to remove less then value of the index and we are going to store our
+            // while to remove less then value of the in dex and we are going to store our
             // index in the stack
 
             // This part of the code is a while loop that checks if the stack `s` is not

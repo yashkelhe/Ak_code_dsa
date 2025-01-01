@@ -26,6 +26,7 @@ public class Stock_Span_Problem {
             }
             // if stack is not empty then find the previous value nd then minuse from the
             // index we will get the span
+            // distance between the current low and the privouse high
             else {
                 int privouseHigh = s.peek();
                 span[i] = i - privouseHigh;
