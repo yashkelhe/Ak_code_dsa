@@ -29,6 +29,7 @@ public class Job_sequence_problem {
 
         // syntex of the sorting object in decending order
         // lambda function
+        // if the obj2 is greater than obj1 then obj2 will come first
         Collections.sort(jobs, (obj1, obj2) -> obj2.profit - obj1.profit);
 
         ArrayList<Integer> seq = new ArrayList<>();
@@ -37,6 +38,7 @@ public class Job_sequence_problem {
         for (int i = 0; i < jobs.size(); i++) {
             job curr = jobs.get(i);
             if (curr.deadLine > time) {
+                System.out.println(curr.id);
                 seq.add(curr.id);
                 time++;
             }

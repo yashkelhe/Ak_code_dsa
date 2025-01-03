@@ -5,7 +5,7 @@ import java.util.*;
 // `TC = O(nlogn)` stands for Time Complexity equals Big O of n log n. It represents the time
 // complexity of the algorithm used in the code. In this case, the algorithm has a time complexity of
 // O(n log n), which means the time taken by the algorithm to run increases linearly with the input
-// size n, but the rate of increase is logarithmic.
+// size n, but the rate of increase is logar+ithmic.
 // TC =O(nlogn)
 public class Indian_coins {
     public static void main(String[] args) {

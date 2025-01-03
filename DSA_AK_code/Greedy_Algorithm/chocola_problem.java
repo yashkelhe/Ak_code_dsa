@@ -25,7 +25,6 @@ public class chocola_problem {
         // run the loop costHor and costVer length
         while (h < costHor.length && v < costVer.length) {
             // here now we have to make cuts on the chocolate
-
             if (costVer[v] <= costHor[h]) { /// for the horizontal cuts
                 cost += (costHor[h] * vp);
                 h++;
