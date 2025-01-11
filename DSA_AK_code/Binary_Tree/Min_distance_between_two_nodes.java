@@ -88,3 +88,57 @@ public class Min_distance_between_two_nodes {
 
     }
 }
+
+/*
+ * Distance from LCA (1) to Node 4
+ * Call 1: lcadist(root = 1, n = 4)
+ * 
+ * root.data = 1, not equal to 4.
+ * Recursively check left and right subtrees.
+ * Call 2: lcadist(root = 2, n = 4) (left subtree of 1)
+ * 
+ * root.data = 2, not equal to 4.
+ * Recursively check left and right subtrees.
+ * Call 3: lcadist(root = 4, n = 4) (left subtree of 2)
+ * 
+ * root.data = 4, matches n = 4.
+ * Return 0.
+ * Back to Call 2:
+ * 
+ * leftdist = 0 (from Call 3).
+ * rightdist = -1 (no match in the right subtree).
+ * Return leftdist + 1 = 1.
+ * Back to Call 1:
+ * 
+ * leftdist = 1 (from Call 2).
+ * rightdist = -1 (no match in the right subtree).
+ * Return leftdist + 1 = 2.
+ * Distance from Node 1 to Node 4 = 2
+ * 
+ * Distance from LCA (1) to Node 6
+ * Call 1: lcadist(root = 1, n = 6)
+ * 
+ * root.data = 1, not equal to 6.
+ * Recursively check left and right subtrees.
+ * Call 2: lcadist(root = 3, n = 6) (right subtree of 1)
+ * 
+ * root.data = 3, not equal to 6.
+ * Recursively check left and right subtrees.
+ * Call 3: lcadist(root = 6, n = 6) (left subtree of 3)
+ * 
+ * root.data = 6, matches n = 6.
+ * Return 0.
+ * Back to Call 2:
+ * 
+ * leftdist = 0 (from Call 3).
+ * rightdist = -1 (no match in the right subtree).
+ * Return leftdist + 1 = 1.
+ * Back to Call 1:
+ * 
+ * leftdist = -1 (no match in the left subtree).
+ * rightdist = 1 (from Call 2).
+ * Return rightdist + 1 = 2.
+ * Distance from Node 1 to Node 6 = 2
+ * 
+ * 
+ */

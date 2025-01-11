@@ -53,14 +53,17 @@ public class Invert_Binary_tree {
         inOrder(root);
     }
 }
-
-1 - 2 3          // Processing left subtree of 1
-2 - 4 5          // Processing left subtree of 2
-4 - null         // Leftmost leaf, returns null
-5 - null         // Right leaf, returns null
-2 - null         // After processing left subtree, returns null
-3 - 6 7          // Processing right subtree of 3
-6 - null         // Left leaf, returns null
-7 - null         // Rightmost leaf, returns null
-3 - null         // After processing right subtree, returns null
-1 - null         // After processing root, returns null
+/*
+ * 
+ * 
+ * 1 - 2 3 // Processing left subtree of 1
+ * 2 - 4 5 // Processing left subtree of 2
+ * 4 - null // Leftmost leaf, returns null
+ * 5 - null // Right leaf, returns null
+ * 2 - null // After processing left subtree, returns null
+ * 3 - 6 7 // Processing right subtree of 3
+ * 6 - null // Left leaf, returns null
+ * 7 - null // Rightmost leaf, returns null
+ * 3 - null // After processing right subtree, returns null
+ * 1 - null // After processing root, returns null
+ */

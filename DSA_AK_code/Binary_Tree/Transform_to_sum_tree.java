@@ -22,6 +22,7 @@ public class Transform_to_sum_tree {
         int leftchild = toSumTree(root.left);
         int rightchild = toSumTree(root.right);
 
+        // both when null
         int data = root.data;
         // just rather then sending the null send 0
 
@@ -31,6 +32,7 @@ public class Transform_to_sum_tree {
         // left and right
         // we want a hole sum of the tree
         root.data = newLeft + leftchild + newright + rightchild;
+        // to add to upper level
         return data;
     }
 

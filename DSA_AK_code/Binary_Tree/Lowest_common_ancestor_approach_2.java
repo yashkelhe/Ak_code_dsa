@@ -35,6 +35,7 @@ public class Lowest_common_ancestor_approach_2 {
         }
         // if the only exists on the right
         // left = null; right = val
+        // while backtracking if the left is null the take the right
         if (leftNode == null) {
             return rightNode;
         }

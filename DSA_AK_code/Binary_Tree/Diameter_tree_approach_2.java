@@ -49,7 +49,6 @@ public class Diameter_tree_approach_2 {
 
         // compare the last one with new one
         return new info(diameter, height);
-
     }
 
     public static void main(String[] args) {

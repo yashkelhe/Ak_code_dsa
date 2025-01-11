@@ -32,6 +32,7 @@ public class Top_view_of_Binary_tree {
         HashMap<Integer, Node> map = new HashMap<>();
         int min = 0;
         int max = 0;
+        // BFS breadth first serach level by level
         q.add(new info(root, 0));
         q.add(null);
 
