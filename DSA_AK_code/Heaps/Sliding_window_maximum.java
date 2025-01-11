@@ -46,7 +46,7 @@ public class Sliding_window_maximum {
             pq.add(new Pair(arr[i], i));
             res[i - k + 1] = pq.peek().value;
         }
-        for (int i = 0; i < res.length; i++) {
+        for (int i = p; i < res.length; i++) {
             System.out.println(res[i] + " ");
         }
     }
