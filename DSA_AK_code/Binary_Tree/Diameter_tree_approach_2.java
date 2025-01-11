@@ -47,6 +47,7 @@ public class Diameter_tree_approach_2 {
         // second is by the edges here we have considerd Nodes
         int height = Math.max(leftInfo.height, rightInfo.height) + 1;
 
+        // compare the last one with new one
         return new info(diameter, height);
 
     }

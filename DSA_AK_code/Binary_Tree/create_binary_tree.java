@@ -19,6 +19,8 @@ public class create_binary_tree {
 
         public static Node buildNode(int nodes[]) {
             index++;
+
+            // -1 means null node in the tree
             if (-1 == nodes[index]) {
                 return null;
             }
