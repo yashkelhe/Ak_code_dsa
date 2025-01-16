@@ -44,7 +44,7 @@ public class Undirected_Cycle_detection {
         for (int i = 0; i < graph[curr].size(); i++) {
             Edge e = graph[curr].get(i);
             // case 3
-            if (!visit[curr]) {
+            if (!visit[e.dest]) {
                 if (detectCycleUtill(graph, visit, e.dest, curr)) {
 
                     return true;
@@ -55,6 +55,7 @@ public class Undirected_Cycle_detection {
                 return true;
             }
             // case 2 continue
+            // if the dest is equal to the parent then skip
         }
         return false;
     }
@@ -85,3 +86,17 @@ public class Undirected_Cycle_detection {
 
     }
 }
+/*
+ * Case 3:
+ * If the neighbor (e.dest) has not been visited, recursively call
+ * detectCycleUtill for that neighbor.
+ * 
+ * Case 1:
+ * If the neighbor (e.dest) is already visited but is not the parent, it means
+ * there is a back edge, indicating a cycle.
+ * 
+ * Case 2:
+ * If the neighbor is the parent, it is part of the undirected graph's traversal
+ * and should be ignored.
+ * 
+ */

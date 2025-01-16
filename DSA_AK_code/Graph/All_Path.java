@@ -2,7 +2,7 @@ package Graph;
 
 import java.util.*;
 
-public class Find_All_Path {
+public class All_Path {
     public static class Edge {
         int src;
         int dest;

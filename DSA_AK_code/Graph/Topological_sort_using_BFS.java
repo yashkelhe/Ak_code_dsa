@@ -32,8 +32,9 @@ public class Topological_sort_using_BFS {
     public static void calculateIndeg(ArrayList<Edge>[] graph, int[] indeg) {
         for (int i = 0; i < graph.length; i++) {
             int v = i;
-            for (int j = 0; i < graph[v].size(); j++) {
+            for (int j = 0; j < graph[v].size(); j++) {
                 Edge e = graph[v].get(j);
+                // indegree as we are going to node means that node has one indegree
                 indeg[e.dest]++;
             }
         }
@@ -57,6 +58,7 @@ public class Topological_sort_using_BFS {
             int curr = q.remove();
             System.out.println("curr : " + curr); // topological sort
 
+            // outDegree
             for (int i = 0; i < graph[curr].size(); i++) {
                 Edge e = graph[curr].get(i);
                 indeg[e.dest]--;

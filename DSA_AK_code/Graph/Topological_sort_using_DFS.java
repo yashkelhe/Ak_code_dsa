@@ -2,7 +2,7 @@ package Graph;
 
 import java.util.*;
 
-public class Topological_Sort {
+public class Topological_sort_using_DFS {
     public static class Edge {
         int src;
         int dest;
@@ -27,6 +27,7 @@ public class Topological_Sort {
         graph[5].add(new Edge(5, 0));
         graph[5].add(new Edge(5, 2));
     }
+    // using the DFS
 
     public static void topSort(ArrayList<Edge>[] graph) {
         boolean[] visi = new boolean[graph.length];
@@ -48,6 +49,9 @@ public class Topological_Sort {
     public static void topSortUtil(ArrayList<Edge> graph[], int curr, boolean visi[], Stack<Integer> stack) {
         visi[curr] = true;
         System.out.println("after calling " + curr);
+
+        // if the curr does not have the neighbores then it will add to the stack
+        // directly
         for (int i = 0; i < graph[curr].size(); i++) {
             Edge e = graph[curr].get(i);
             // if the neighours are not true then add make it true

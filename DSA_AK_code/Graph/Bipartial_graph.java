@@ -68,6 +68,7 @@ public class Bipartial_graph {
                         // third the color are same now then return then false that for this is not an
                         // isBipartite
                         if (col[e.dest] == -1) {
+                            // give the different colour
                             int nextCol = col[curr] == 0 ? 1 : 0;
                             col[e.dest] = nextCol;
                             qe.add(e.dest);
