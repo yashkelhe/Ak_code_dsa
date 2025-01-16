@@ -26,7 +26,10 @@ public class Cycle_in_undirected_graph {
     }
 
     public static boolean isCycle(ArrayList<Edge>[] graph) {
+        // for the parent
         boolean vis[] = new boolean[graph.length];
+        // for the next neigbour
+        // like the currect path
         boolean stack[] = new boolean[graph.length];
 
         for (int i = 0; i < graph.length; i++) {
@@ -39,26 +42,36 @@ public class Cycle_in_undirected_graph {
         return false;
     }
 
+    // its DFS which is used for the undirected graph
     public static boolean isCycleUtil(ArrayList<Edge>[] graph, int curr, boolean vis[], boolean stack[]) {
         vis[curr] = true;
         stack[curr] = true;
 
         for (int i = 0; i < graph[curr].size(); i++) {
             Edge e = graph[curr].get(i);
-            // for the cycle
+            // if the neighbor are visted then return true
             if (stack[e.dest]) {
                 return true;
             }
+            // if the false then call the nrighboure if they are not visited
+            // and after calling if we found that the neighbor in the stack are visted then
+            // retrun true
             if (!vis[e.dest] && isCycleUtil(graph, e.dest, vis, stack)) {
                 return true;
             }
         }
+
+        // if not found the cycle in the currect path make it false which will help to
+        // other path
+        // if u set this as true then it will create problem for the next path
         stack[curr] = false;
         return false;
     }
 
     public static void main(String[] args) {
         int v = 4;
+        // adjacency list
+
         @SuppressWarnings("unchecked")
         ArrayList<Edge> graph[] = new ArrayList[v];
         System.out.println("the graph has been created successfully...");

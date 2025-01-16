@@ -48,7 +48,9 @@ public class Nearst_cars_print_k_car {
         }
 
         for (int i = 0; i < k; i++) {
+
             System.out.println("C" + q.remove().index);
+
         }
     }
 }
