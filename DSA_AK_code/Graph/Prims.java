@@ -53,19 +53,21 @@ public class Prims {
         }
     }
 
+    // Minimum Spanning Tree(MST)using Prim'sAlgorithm
     public static void prims(ArrayList<Edge> graph[]) {
         boolean visi[] = new boolean[graph.length];
         // always remamber PQ always do some sorting becouse its min heap then we have
-        // to specify that on what bases it should sort
         PriorityQueue<Pair> pq = new PriorityQueue<>();
+
+        // the source to source is 0
         pq.add(new Pair(0, 0));
-        // this is mst total cost
         int finalCost = 0;
+
         while (!pq.isEmpty()) {
             Pair curr = pq.remove();
             if (!visi[curr.vertex]) {
                 visi[curr.vertex] = true;
-                finalCost += curr.cost;
+                finalCost += curr.cost; // 0 , 10 , 15 , 30
                 for (int i = 0; i < graph[curr.vertex].size(); i++) {
                     Edge e = graph[curr.vertex].get(i);
                     pq.add(new Pair(e.dest, e.weight));

@@ -66,7 +66,6 @@ public class kruskals {
             par[parA] = parB;
 
         } else {
-
             par[parB] = parA;
         }
 
@@ -74,6 +73,7 @@ public class kruskals {
 
     public static void Kruskals_Algo(ArrayList<Edge> edges, int v) {
         init();
+        // Collections.sort(edges,(x, y) -> x.weight - y.weight);
         Collections.sort(edges); // O(ElogE)
         int MstCost = 0;
         int count = 0;
@@ -87,6 +87,7 @@ public class kruskals {
             int parB = find(e.dest);
             // if both are not part of the some parent then we will called the union to make
             // it same parent
+
             if (parA != parB) {
                 union(parA, parB);
                 MstCost += e.weight;

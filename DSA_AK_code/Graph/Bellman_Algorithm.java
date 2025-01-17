@@ -54,6 +54,7 @@ public class Bellman_Algorithm {
         }
         // O(V*E)
         // V-1 O(v)
+
         for (int i = 0; i < graph.length - 1; i++) {
             // to find the all the edges and the time complexty will be same even as we are
             // using the two loops
@@ -90,10 +91,13 @@ public class Bellman_Algorithm {
         }
         // O(V*E)
         // V-1 O(v)
+        // how many vertice are there
         for (int i = 0; i < v - 1; i++) {
             // to find the all the edges and the time complexty will be same even as we are
             // using the two loops
             // O(E)
+
+            // how many eadges are there
             for (int j = 0; j < graph.size(); j++) {
 
                 Edge e = graph.get(j);
@@ -123,6 +127,7 @@ public class Bellman_Algorithm {
         int src = 0;
         BellmanAlgo(graph, src);
         // simple way but the time complexty will be same
+        // /////////////////////////////////////////////////////////////////////////////////////////
         System.out.println("Method 2 which take same time complexty  O(VE)");
         ArrayList<Edge> edges = new ArrayList<>();
         createGraph2(edges);
