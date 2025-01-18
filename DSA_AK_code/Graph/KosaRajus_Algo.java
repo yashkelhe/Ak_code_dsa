@@ -59,7 +59,7 @@ public class KosaRajus_Algo {
     }
 
     public static void kosaraju(ArrayList<Edge> graph[], int v) {
-
+        // requires two DFS traversals of a Graph
         /*
          * first find the top sort to find the most dependent vertice first and less
          * last in the stack

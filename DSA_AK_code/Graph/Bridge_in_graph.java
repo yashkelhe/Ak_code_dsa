@@ -62,6 +62,7 @@ public class Bridge_in_graph {
                     System.out.println("Bridge found : " + curr + " -> " + neigh);
                 }
             } else {
+                // if already visted then find the min between the dest and curr
                 low[curr] = Math.min(low[curr], dt[e.dest]);
 
             }
@@ -88,3 +89,116 @@ public class Bridge_in_graph {
         tarjansBridge(graph, v);
     }
 }
+
+/*
+ * Start DFS at Node 0:
+ * Visit Node 0:
+ * 
+ * Mark visi[0] = true
+ * Update dt[0] = 1, low[0] = 1
+ * Updated values:
+ * dt = [1, -1, -1, -1, -1, -1]
+ * low = [1, -1, -1, -1, -1, -1]
+ * Move to Neighbor Node 1:
+ * 
+ * Mark visi[1] = true
+ * Update dt[1] = 2, low[1] = 2
+ * Updated values:
+ * dt = [1, 2, -1, -1, -1, -1]
+ * low = [1, 2, -1, -1, -1, -1]
+ * Node 1 -> Neighbor Node 0:
+ * 
+ * par is 0, so skip.
+ * Node 1 -> Neighbor Node 2:
+ * 
+ * Mark visi[2] = true
+ * Update dt[2] = 3, low[2] = 3
+ * Updated values:
+ * dt = [1, 2, 3, -1, -1, -1]
+ * low = [1, 2, 3, -1, -1, -1]
+ * Node 2 -> Neighbor Node 0:
+ * 
+ * Node 0 is already visited. Update low[2] = min(low[2], dt[0]) = min(3, 1) =
+ * 1.
+ * Updated values:
+ * low = [1, 2, 1, -1, -1, -1]
+ * Node 2 -> Neighbor Node 1:
+ * 
+ * Node 1 is already visited. Update low[2] = min(low[2], dt[1]) = min(1, 2) =
+ * 1.
+ * Updated values:
+ * low = [1, 2, 1, -1, -1, -1]
+ * Backtrack to Node 1:
+ * 
+ * Update low[1] = min(low[1], low[2]) = min(2, 1) = 1.
+ * No bridge found since dt[1] < low[2] is false.
+ * Updated values:
+ * low = [1, 1, 1, -1, -1, -1]
+ * Backtrack to Node 0:
+ * 
+ * Update low[0] = min(low[0], low[1]) = min(1, 1) = 1.
+ * No bridge found since dt[0] < low[1] is false.
+ * Updated values:
+ * low = [1, 1, 1, -1, -1, -1]
+ * Node 0 -> Neighbor Node 2:
+ * 
+ * Already visited. Update low[0] = min(low[0], dt[2]) = min(1, 3) = 1.
+ * Updated values:
+ * low = [1, 1, 1, -1, -1, -1]
+ * Node 0 -> Neighbor Node 3:
+ * 
+ * Mark visi[3] = true
+ * Update dt[3] = 4, low[3] = 4
+ * Updated values:
+ * dt = [1, 2, 3, 4, -1, -1]
+ * low = [1, 1, 1, 4, -1, -1]
+ * Node 3 -> Neighbor Node 0:
+ * 
+ * Already visited. Update low[3] = min(low[3], dt[0]) = min(4, 1) = 1.
+ * Updated values:
+ * low = [1, 1, 1, 1, -1, -1]
+ * Continue DFS at Node 3:
+ * Node 3 -> Neighbor Node 4:
+ * 
+ * Mark visi[4] = true
+ * Update dt[4] = 5, low[4] = 5
+ * Updated values:
+ * dt = [1, 2, 3, 4, 5, -1]
+ * low = [1, 1, 1, 1, 5, -1]
+ * Node 4 -> Neighbor Node 3:
+ * 
+ * Already visited. Update low[4] = min(low[4], dt[3]) = min(5, 4) = 4.
+ * Updated values:
+ * low = [1, 1, 1, 1, 4, -1]
+ * Node 4 -> Neighbor Node 5:
+ * 
+ * Mark visi[5] = true
+ * Update dt[5] = 6, low[5] = 6
+ * Updated values:
+ * dt = [1, 2, 3, 4, 5, 6]
+ * low = [1, 1, 1, 1, 4, 6]
+ * Node 5 -> Neighbor Node 3:
+ * 
+ * Already visited. Update low[5] = min(low[5], dt[3]) = min(6, 4) = 4.
+ * Updated values:
+ * low = [1, 1, 1, 1, 4, 4]
+ * Node 5 -> Neighbor Node 4:
+ * 
+ * Already visited. Update low[5] = min(low[5], dt[4]) = min(4, 5) = 4.
+ * Updated values:
+ * low = [1, 1, 1, 1, 4, 4]
+ * Backtrack to Node 4:
+ * 
+ * Update low[4] = min(low[4], low[5]) = min(4, 4) = 4.
+ * No bridge found since dt[4] < low[5] is false.
+ * Updated values:
+ * low = [1, 1, 1, 1, 4, 4]
+ * Backtrack to Node 3:
+ * 
+ * Update low[3] = min(low[3], low[4]) = min(1, 4) = 1.
+ * Bridge found: 3 -> 4
+ * Updated values:
+ * low = [1, 1, 1, 1, 4, 4]
+ * Final Bridges Found:
+ * 3 -> 4
+ */
