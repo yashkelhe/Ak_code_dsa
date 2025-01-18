@@ -3,12 +3,14 @@ package Graph;
 public class Flood_Fill_algo {
     // O(m * n)
     public void helper(int[][] image, int sr, int sc, int color, boolean[][] visi, int orgCol) {
+
         if (sr < 0 || sc < 0 || sr >= image.length || sc >= image[0].length || visi[sr][sc]
                 || image[sr][sc] != orgCol) {
             return;
         }
 
         // Mark the pixel as visited
+        // if its visited then dont take again
         visi[sr][sc] = true;
 
         // Change the color of the current pixel
@@ -26,6 +28,9 @@ public class Flood_Fill_algo {
 
     public int[][] floodFill(int[][] image, int sr, int sc, int color) {
         boolean[][] visi = new boolean[image.length][image[0].length];
+        // the original color will of the color which is sr and sc is on it and change
+        // the color which is similar to it with new color
+        // and else do not do anything set as its
         helper(image, sr, sc, color, visi, image[sr][sc]);
         return image;
     }

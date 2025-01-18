@@ -37,7 +37,13 @@ public class KosaRajus_Algo {
                 topSort(graph, e.dest, visi, stack);
             }
         }
-        stack.push(curr);
+
+        /*
+         * 0 → 2 → 1 -> 0
+         * 0 → 3 → 4 -> null
+         */
+        System.out.println("while backtracking  " + curr);
+        stack.push(curr); // 1, 2, 4, 3, 0
     }
 
     public static void dfs(ArrayList<Edge> graph[], int curr, boolean visi[]) {
@@ -53,6 +59,18 @@ public class KosaRajus_Algo {
     }
 
     public static void kosaraju(ArrayList<Edge> graph[], int v) {
+
+        /*
+         * first find the top sort to find the most dependent vertice first and less
+         * last in the stack
+         * why its important because the most dependance vertix works as source for the
+         * reversing
+         * then create an transpose by reversing like src to dest -> dest to src
+         * 
+         * and then DFS on the reverse like based on the stack of the first step
+         * if we found the vertix dont have the outgoing edge
+         * 
+         */
         // step 1
         Stack<Integer> stack = new Stack<>();
         boolean[] visi = new boolean[graph.length];
@@ -65,7 +83,8 @@ public class KosaRajus_Algo {
 
         // step 2
         // make the transpose
-        ArrayList<Edge> transpose[] = new ArrayList[v];
+        @SuppressWarnings("unchecked")
+        ArrayList<Edge>[] transpose = new ArrayList[v];
         for (int i = 0; i < transpose.length; i++) {
             // why becouse above we have used the visi and now again next we want to use so
             // first lets make it false to everyone and then we can use next
@@ -80,7 +99,7 @@ public class KosaRajus_Algo {
 
                 int src = e.src;
                 int dest = e.dest;
-                // reverse the graph
+                ///////// reverse the graph //////////////////////
                 transpose[dest].add(new Edge(dest, src));
             }
         }
@@ -97,6 +116,7 @@ public class KosaRajus_Algo {
 
     public static void main(String[] args) {
         int v = 5;
+        @SuppressWarnings("unchecked")
         ArrayList<Edge> graph[] = new ArrayList[v];
         createGraph(graph);
         System.out.println("the graph is created");
