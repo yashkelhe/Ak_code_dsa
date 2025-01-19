@@ -20,7 +20,7 @@ public class fibonacci_Tabulation {
     }
 
     public static void main(String[] args) {
-        System.out.println(tabulationMethodOFDP(7));
+        System.out.println(tabulationMethodOFDP(6));
     }
 
 }

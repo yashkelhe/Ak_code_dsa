@@ -72,13 +72,14 @@ public class Knapsack_01 {
         // and j means the max weight
         // (2, 3)
         // there will 0 1 2 items and weight is 3
+        // j is weight
+        // i is value
         for (int i = 1; i < n + 1; i++) {
             for (int j = 1; j < w + 1; j++) {
                 int v = value[i - 1]; // ith item value
                 int ww = weight[i - 1];// ith item weight
                 // valid
                 if (ww <= j) {
-
                     int includeProfit = v + dp[i - 1][j - ww];
                     int excludeProfit = dp[i - 1][j]; // when the weigjt is greater then j
                     dp[i][j] = Math.max(includeProfit, excludeProfit);
@@ -114,6 +115,7 @@ public class Knapsack_01 {
         System.out.println("using Recursion : " + knapsackFindMaxValue(value, wt, w, value.length));
 
         System.out.println("using tabulation : " + TabulationKnapsack(value, wt, w));
+
         int DP[][] = new int[value.length + 1][w + 1];
         for (int[] row : DP) {
 
