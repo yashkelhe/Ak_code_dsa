@@ -9,8 +9,14 @@ public class Subsequence_Memoization {
             return dp[i][j];
         }
         if (str1.charAt(i - 1) == str2.charAt(j - 1)) {
+            // if gets matched then call to next character and why + 1 because we get the
+            // matched the character
+
             return dp[i][j] = longestSubstringCount(str1, str2, i - 1, j - 1, dp) + 1;
         } else {
+            // if not then check next char of the str1 and current char of the str2
+            // and in the second half check next char of the str2 and current char of the
+            // str1
             int firsthalf = longestSubstringCount(str1, str2, i - 1, j, dp);
             int secondthalf = longestSubstringCount(str1, str2, i, j - 1, dp);
             return dp[i][j] = Math.max(firsthalf, secondthalf);
