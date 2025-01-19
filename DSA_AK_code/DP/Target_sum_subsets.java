@@ -15,7 +15,7 @@ public class Target_sum_subsets {
 
     public static boolean targetSumSubsets(int arr[], int sum) {
         int n = arr.length;
-        // in java the value in the boolean array the values by default values are false
+
         boolean dp[][] = new boolean[n + 1][sum + 1];
 
         // now the base case is when the sum is 0 and element can be any then there will
@@ -29,12 +29,15 @@ public class Target_sum_subsets {
             for (int j = 1; j < sum + 1; j++) {
                 int v = arr[i - 1];
                 // include
-                // v is the value of the index as we are starting from the 1 then our first
-                // index will on the i-1 wihch is 0 index
-                // and dp[i-1][j-v] will check that the value which we have substracted from the
+
+                // dp[i-1][j-v] will check that the value which we have substracted from the
                 // sum is eual to the zero means a case which gives the true
                 // to check the previouse value after substracting
 
+                // we have to check that the in the array have the numbers which is equal to the
+                // sum
+                // so for that if we are subtracting the current value then there should another
+                // value which make that value as zeroso that is why we are check the back value
                 if (v <= j && dp[i - 1][j - v] == true) {
                     dp[i][j] = true;
                 }
@@ -46,7 +49,7 @@ public class Target_sum_subsets {
 
                 }
                 // and we dont need to make it false becouse in java the array already
-                // initialize with the fals e
+                // initialize with the false
             }
         }
         print(dp);

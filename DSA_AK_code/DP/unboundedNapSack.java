@@ -29,12 +29,13 @@ public class unboundedNapSack {
                 // valid
                 // current weight is less then j then valid
                 if (weight[i - 1] <= j) {
+                    // we are using the some value again, so we are checking the current weight
 
                     dp[i][j] = Math.max(value[i - 1] + dp[i][j - weight[i - 1]], dp[i - 1][j]);
                 }
                 // invalid condition
                 else {
-
+                    // exclude take the previouse value
                     dp[i][j] = dp[i - 1][j];
 
                 }

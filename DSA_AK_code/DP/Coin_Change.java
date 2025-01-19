@@ -1,5 +1,9 @@
 package DP;
 
+/*
+ Given a set of coins of different denominations and a total amount (sum), find the number of distinct ways to make the amount using the coins.
+You can use each coin an unlimited number of times 
+ */
 public class Coin_Change {
     public static int UsingTabulation(int coins[], int sum) {
         int n = coins.length;
@@ -21,6 +25,8 @@ public class Coin_Change {
         for (int i = 1; i < n + 1; i++) {
             for (int j = 1; j < sum + 1; j++) {
                 if (coins[i - 1] <= j) {// valid
+                    // why only the i because we are using the some coin again at row means single
+                    // coin
                     dp[i][j] = dp[i][j - coins[i - 1]] + dp[i - 1][j];
                 } else {// exclude condition
                     dp[i][j] = dp[i - 1][j];
