@@ -52,7 +52,6 @@ public class EditDistance {
                     int replace = dp[i - 1][j - 1] + 1;
 
                     // why min because we want optimize and minimum opetaion
-
                     dp[i][j] = Math.min(add, Math.min(remove, replace));
                 }
 
