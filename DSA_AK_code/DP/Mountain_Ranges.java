@@ -3,6 +3,7 @@ package DP;
 public class Mountain_Ranges {
 
     // O(n^2)
+    // catalans number
     public static int Mountain_Valleys(int n) {
         int dp[] = new int[n + 1];
         dp[0] = 1;
