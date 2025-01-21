@@ -17,7 +17,6 @@ public class Longest_Common_SubString {
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= m; j++) {
                 if (st1.charAt(i - 1) == st2.charAt(j - 1)) {
-
                     dp[i][j] = dp[i - 1][j - 1] + 1;
                     Ans = Math.max(Ans, dp[i][j]);
                 } else {
